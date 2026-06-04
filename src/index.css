@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Base styles — 温暖治愈的全局基调
+   ============================================================ */
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-warm-50 text-warm-900;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    overscroll-behavior: none;
+  }
+
+  /* 选中文字的颜色 */
+  ::selection {
+    @apply bg-sage-200 text-sage-900;
+  }
+}
+
+/* ============================================================
+   Utility classes
+   ============================================================ */
+@layer utilities {
+  /* 卡片玻璃质感 */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/60 shadow-sm;
+  }
+
+  /* 浮起阴影 */
+  .shadow-float {
+    box-shadow:
+      0 4px 24px -4px rgba(0, 0, 0, 0.06),
+      0 8px 32px -8px rgba(0, 0, 0, 0.04);
+  }
+
+  /* 底部安全区适配 */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+}
